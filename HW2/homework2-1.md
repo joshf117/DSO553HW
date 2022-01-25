@@ -1,5 +1,5 @@
 db.createCollection("Customer", {  
-   "validator": {  
+        "validator": {  
       $jsonSchema: {  
          bsonType: "object",  
          required: [ "customer_numb", "customer_first_name", "customer_last_name", "customer_street",  
