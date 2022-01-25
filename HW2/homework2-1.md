@@ -1,20 +1,20 @@
-db.createCollection("Customer", {
-   "validator": {
-      $jsonSchema: {
-         bsonType: "object",
-         required: [ "customer_numb", "customer_first_name", "customer_last_name", "customer_street",
-                    "customer_city", "customer_state", "customer_zip", "customer_phone", "order" ],
-         properties: {
-            customer_numb: {
-               bsonType: "number",
-               description: "must be a number and is required"
-            },
-            customer_first_name: {
-               bsonType: "string",
-               description: "must be a string and is required"
-            },
-            customer_last_name: {
-               bsonType: "string",
+db.createCollection("Customer", {  
+   "validator": {  
+      $jsonSchema: {  
+         bsonType: "object",  
+         required: [ "customer_numb", "customer_first_name", "customer_last_name", "customer_street",  
+                    "customer_city", "customer_state", "customer_zip", "customer_phone", "order" ],  
+         properties: {  
+            customer_numb: {  
+               bsonType: "number",  
+               description: "must be a number and is required"  
+            },  
+            customer_first_name: {  
+               bsonType: "string",  
+               description: "must be a string and is required"  
+            },  
+            customer_last_name: {  
+               bsonType: "string",  
                description: "must be a string and is required"
             },
             customer_street: {
