@@ -1,4 +1,6 @@
 ```
+db.student.drop()
+
 db.createCollection("student", {  
   "validator": {  
       $jsonSchema: {  
@@ -142,12 +144,11 @@ db.student.insertMany([
     }
 ])
 
-# We can use the zip code information in embedded sub-document as an index
-# Create index
-db.student.createIndex( { "address.zip_code": 1 } )
+db.student.createIndex( { "phone": 1 } )
 
-# Use student phone number to search
-db.student.find({"phone": "213-245-6789"})
+db.student.find({"phone": "213-245-6789"},{"name": 1})
 
-# Use zipcode of address to search
-db.student.find({"address.zip_code": 90007})
+db.student.find({"phone": "213-245-6789"}).explain("executionStats")
+db.student.find({"phone": "213-245-6789"},{"name": 1}).explain("executionStats")
+```
+
