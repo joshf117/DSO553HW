@@ -144,7 +144,8 @@ db.student.insertMany([
     }
 ])
 
-db.student.createIndex( { "phone": 1, "address.zip_code": 1 } )
+db.student.createIndex( { "phone": 1 } )
+db.student.createIndex( { "address.zip_code": 1 })
 
 db.student.find({"phone": "213-245-6789"},{"name": 1})
 
