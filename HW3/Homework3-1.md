@@ -19,7 +19,6 @@ db.orders.aggregate({$group:{_id:["$productName","$status"],sumQuantity:{$sum:"$
   { _id: [ 'Steel beam', 'new' ], sumQuantity: 10 },
   { _id: [ 'Steel beam', 'urgent' ], sumQuantity: 50 }]
 
-
 # Question d - 2 stages in the pipeline
 db.orders.aggregate([{$group:{_id:["$productName","$status"],sumQuantity:{$sum:"$quantity"}}},{$match:{sumQuantity:{$gte:15}}}])
  # output
